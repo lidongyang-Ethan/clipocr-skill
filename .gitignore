@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local skill state (when the runner falls back to a skill-local venv)
+.venv/
+__pycache__/
