@@ -26,10 +26,12 @@ metadata:
 skill 自动检查 clipocr 是否已装，没装就提示用户：
 
 ```bash
+pipx install clipocr
+# 或
 pip install clipocr
 ```
 
-或者用项目自带的 venv：`pip install -e ~/codeLife/clipocr`。
+如果想指定某个自定义的 Python 环境，设环境变量 `CLIPOCR_PYTHON` 即可。
 
 ## 用法
 

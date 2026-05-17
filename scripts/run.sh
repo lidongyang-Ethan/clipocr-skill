@@ -2,30 +2,29 @@
 # clipocr OpenClaw skill runner
 #
 # Usage:
-#   run.sh <image-path>            # OCR a file, output JSON
-#   run.sh --clip                  # OCR clipboard, output JSON
+#   run.sh <image-path>             # OCR a file, output JSON
+#   run.sh --clip                   # OCR clipboard, output JSON
 #   run.sh <image-path> --text-only # OCR a file, output plain text
 #   run.sh --clip --text-only       # OCR clipboard, output plain text
 #
 # Resolves clipocr in this order:
-#   1. Local dev install at ~/codeLife/clipocr/.venv (preferred during development)
-#   2. ~/.openclaw/plugin-skills/clipocr/.venv (skill-local venv)
-#   3. System python (whatever `python3 -m clipocr` resolves to)
+#   1. $CLIPOCR_PYTHON env var (override for dev or custom envs)
+#   2. <skill-dir>/.venv (skill-local venv)
+#   3. system python3 (whatever `python3 -m clipocr` resolves to)
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILL_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Pick the first python with clipocr available
 find_python() {
     local candidates=(
-        "$HOME/codeLife/clipocr/.venv/bin/python"
+        "${CLIPOCR_PYTHON:-}"
         "$SKILL_DIR/.venv/bin/python"
         "$(command -v python3 || true)"
     )
     for py in "${candidates[@]}"; do
-        if [[ -x "$py" ]] && "$py" -c "import clipocr" >/dev/null 2>&1; then
+        if [[ -n "$py" && -x "$py" ]] && "$py" -c "import clipocr" >/dev/null 2>&1; then
             echo "$py"
             return 0
         fi
@@ -38,11 +37,12 @@ if [[ -z "$PY" ]]; then
     cat >&2 <<EOF
 [clipocr skill] clipocr is not installed in any known Python environment.
 
-Install it with:
-    pip install clipocr
+Install it with one of:
+    pipx install clipocr      # recommended for CLI tools
+    pip install clipocr       # global install
 
-Or, for local development:
-    pip install -e ~/codeLife/clipocr
+Or point CLIPOCR_PYTHON at a Python that has clipocr available:
+    export CLIPOCR_PYTHON=/path/to/venv/bin/python
 
 Then re-run this command.
 EOF

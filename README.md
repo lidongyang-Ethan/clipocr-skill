@@ -17,17 +17,16 @@ When you say things like:
 ## Prerequisites
 
 1. [OpenClaw](https://github.com/openclaw/openclaw) installed
-2. `clipocr` Python package available somewhere your OpenClaw agent can reach:
+2. The `clipocr` Python package available on `PATH`:
    ```bash
+   pipx install clipocr   # recommended for CLI tools
+   # or
    pip install clipocr
-   ```
-   or, for development:
-   ```bash
-   pip install -e ~/codeLife/clipocr
    ```
 
 The `scripts/run.sh` runner auto-discovers `clipocr` in this order:
-1. `~/codeLife/clipocr/.venv/bin/python` (your local dev venv)
+
+1. `$CLIPOCR_PYTHON` env var (override for custom envs)
 2. `<skill-dir>/.venv/bin/python` (skill-local venv)
 3. system `python3` (if `clipocr` is installed globally)
 
@@ -101,6 +100,8 @@ MIT — see [LICENSE](LICENSE).
 先装底层 Python 包：
 
 ```bash
+pipx install clipocr
+# 或
 pip install clipocr
 ```
 
