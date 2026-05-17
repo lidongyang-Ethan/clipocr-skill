@@ -10,7 +10,7 @@ metadata:
 # clipocr
 
 本地 OCR：把截图 / 剪贴板里的图变成文本（含 bbox 坐标）。
-基于 [clipocr](https://github.com/lidongyangLeo/clipocr) Python 包，纯本地推理，不上传任何图。
+基于 [clipocr](https://github.com/lidongyang-Ethan/clipocr) Python 包，纯本地推理，不上传任何图。
 
 ## 何时触发
 
@@ -99,5 +99,5 @@ pip install clipocr
 
 ## Related
 
-- [GitHub 仓库](https://github.com/lidongyangLeo/clipocr)
+- [GitHub 仓库](https://github.com/lidongyang-Ethan/clipocr)
 - [PyPI](https://pypi.org/project/clipocr/)

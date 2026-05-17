@@ -1,6 +1,6 @@
 # clipocr-skill
 
-> [OpenClaw](https://github.com/openclaw/openclaw) skill that wraps the [`clipocr`](https://github.com/lidongyangLeo/clipocr) Python package: turn screenshots / clipboard images into text + bounding boxes, fully on-device.
+> [OpenClaw](https://github.com/openclaw/openclaw) skill that wraps the [`clipocr`](https://github.com/lidongyang-Ethan/clipocr) Python package: turn screenshots / clipboard images into text + bounding boxes, fully on-device.
 
 [中文说明](#中文说明)
 
@@ -36,7 +36,7 @@ The `scripts/run.sh` runner auto-discovers `clipocr` in this order:
 Drop this skill into your OpenClaw plugin-skills directory:
 
 ```bash
-git clone https://github.com/lidongyangLeo/clipocr-skill.git \
+git clone https://github.com/lidongyang-Ethan/clipocr-skill.git \
   ~/.openclaw/plugin-skills/clipocr
 ```
 
@@ -74,7 +74,7 @@ You can also call the runner directly:
 ## Related
 
 - 📦 [clipocr on PyPI](https://pypi.org/project/clipocr/) — the underlying Python package
-- 🐙 [clipocr on GitHub](https://github.com/lidongyangLeo/clipocr) — source for the package
+- 🐙 [clipocr on GitHub](https://github.com/lidongyang-Ethan/clipocr) — source for the package
 - 🦞 [OpenClaw](https://github.com/openclaw/openclaw) — the agent platform this skill plugs into
 
 ## License
@@ -85,7 +85,7 @@ MIT — see [LICENSE](LICENSE).
 
 ## 中文说明
 
-把截图 / 剪贴板里的图变成文本（含 bbox 坐标）的 OpenClaw skill。基于 [`clipocr`](https://github.com/lidongyangLeo/clipocr) Python 包，**纯本地推理，图片不上传**。
+把截图 / 剪贴板里的图变成文本（含 bbox 坐标）的 OpenClaw skill。基于 [`clipocr`](https://github.com/lidongyang-Ethan/clipocr) Python 包，**纯本地推理，图片不上传**。
 
 ### 触发条件
 
@@ -107,7 +107,7 @@ pip install clipocr
 再 clone 这个 skill 到 OpenClaw 的插件目录：
 
 ```bash
-git clone https://github.com/lidongyangLeo/clipocr-skill.git \
+git clone https://github.com/lidongyang-Ethan/clipocr-skill.git \
   ~/.openclaw/plugin-skills/clipocr
 ```
 
@@ -132,5 +132,5 @@ git clone https://github.com/lidongyangLeo/clipocr-skill.git \
 ### 相关链接
 
 - 📦 [PyPI 包：clipocr](https://pypi.org/project/clipocr/)
-- 🐙 [GitHub 源码：clipocr](https://github.com/lidongyangLeo/clipocr)
+- 🐙 [GitHub 源码：clipocr](https://github.com/lidongyang-Ethan/clipocr)
 - 🦞 [OpenClaw](https://github.com/openclaw/openclaw)
